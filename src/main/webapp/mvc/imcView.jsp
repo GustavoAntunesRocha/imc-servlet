@@ -2,8 +2,11 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="/imc-servlet/src/main/webapp/css/bootstrap.css">
+    
     <head>
+    	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <title>Cálculo do IMC</title>
         <meta name="viewport" content="width=device-width">
     </head>
