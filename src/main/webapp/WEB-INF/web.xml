@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ImcController</servlet-name>
+  	<display-name>ImcController</display-name>
+  	<description></description>
+  	<servlet-class>mvc.ImcController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ImcController</servlet-name>
+  	<url-pattern>/imc-mvc</url-pattern>
+  </servlet-mapping>
 </web-app>
