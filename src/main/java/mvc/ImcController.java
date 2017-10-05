@@ -14,19 +14,20 @@ import javax.servlet.http.HttpServletResponse;
 public class ImcController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor. 
-     */
-    public ImcController() {
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// Obtendo os parametros
+		String alturaString = request.getParameter("altura");
+	    Double altura = alturaString == null ? 0.0 : Double.parseDouble(alturaString);
+	    String pesoString = request.getParameter("peso");
+	    Double peso = pesoString == null ? 0.0 : Double.parseDouble(pesoString);
+	    Double imc = peso / (altura*altura);
+	    
+	    //Aplicando regra de negocio
+	    String imcString = ImcModel.tipoImc(imc);
+	    
+	    //chamando a view
+	    request.setAttribute("resultado", imcString);
+		request.getRequestDispatcher("index.html").forward(request, response);
 	}
 
 }
