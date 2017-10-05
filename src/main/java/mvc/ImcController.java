@@ -27,7 +27,7 @@ public class ImcController extends HttpServlet {
 	    
 	    //chamando a view
 	    request.setAttribute("resultado", imcString);
-		request.getRequestDispatcher("index.html").forward(request, response);
+		request.getRequestDispatcher("imcView.jsp").forward(request, response);
 	}
 
 }

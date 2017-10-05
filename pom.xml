@@ -7,7 +7,24 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>imc-servlet Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
+  <properties>
+    <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+  </properties>
+
   <dependencies>
+  	<!-- Para Servlet versão 3 -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <!-- Para não "empacotar" a biblioteca com a aplicação. O application server já possui essa biblioteca.  -->
+      <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -16,6 +33,16 @@
     </dependency>
   </dependencies>
   <build>
+  	<plugins>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <port>9090</port>
+        </configuration>
+      </plugin>
+    </plugins>
     <finalName>imc-servlet</finalName>
   </build>
 </project>
